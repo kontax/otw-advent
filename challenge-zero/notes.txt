@@ -15,3 +15,5 @@ pw = [
 # 0x7c62 - 
 # 0x7e00 - Start of PW we've typed in
 # Potential PW? 0xaa55950d36fc2d0d24970aa5 - is within xmm0 before func
+qemu-system-i386 boot.bin -cpu max -s -S -nographic
+gdb -ex 'target remote localhost:1234' -ex 'b *0x7c00' -ex 'c'
