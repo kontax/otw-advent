@@ -15,36 +15,57 @@ def encrypt(xmm0, xmm3):
     xmm0 = xmm0 ^ xmm3
     bh   = 0x36
     bl   = 0xe5
-    ah   = 0x73
+    ax   = 0x7300
     shuf = 0x10
     
     while True:
-        ax = ah >> 7
+        ax = ax >> 7
         al = int(ax / bl)
         ah = ax % bl
+        ax = join_reg(ah, al)
         xmm1 = aeskeygenassist(xmm0, ah)    # xmm0: {0xb980796d, 0x24970aa5, 0x36fc2d0d, 0xaa55950d}
                                             # xmm1: {0x36886706, 0x06368866, 0xacfc2ad7, 0xd7acfc2b}
 
         xmm1 = pshufd(xmm1, 0xff)           # xmm1: {0x36886706, 0x06368866, 0xacfc2ad7, 0xd7acfc2b}
                                             # ->    {0xd7acfc2b, 0xd7acfc2b, 0xd7acfc2b, 0xd7acfc2b}
         
-        while shuf > 127:
+        while True:
             xmm2 = shufps(xmm0, xmm2, shuf) # xmm0: {0xb980796d, 0x24970aa5, 0x36fc2d0d, 0xaa55950d}
                                             # xmm2: {0x0,        0x0,        0x0         0x0       }
                                             # xmm2: {0x0,        0x0,        0x24970aa5, 0xb980796d}
             
             xmm0 = xmm0 ^ xmm2
             shuf = shuf ^ 0x9c
+            if shuf > 127:
+                break
         
         xmm0 = xmm0 ^ xmm1
         
-        if ah == bh:
+        if split_reg(ax)[0] == bh:
             break
             
         aesenc(xmm3, xmm0)
 
     aesenclast(xmm3, xmm0)
-    
+
+"""
+Splits a 32bit register into (high, low) bytes
+"""
+def split_reg(reg):
+    return (reg >> 8, reg & 0xff)
+
+"""
+Joins the high and low 16 bits of a register into a single 32bit register
+"""
+def join_reg(high, low):
+    return (high << 8) | low
+
+"""
+src:  [d, c, b, a]
+n:    [3, 2, 1, 0]
+
+output: [src[3], src[2], src[1], src[0]
+"""
 def pshufd(source, n):
 
     # Group source into 4 longs

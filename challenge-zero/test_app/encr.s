@@ -34,6 +34,7 @@ main:
     correct:
         mov     edx,0x10
         mov     ebx,1
+        mov     ecx, val
         mov     eax,4
         int     0x80
         call    exit
@@ -50,7 +51,7 @@ a3_aes:
         mov     byte [loc_7CB9+5], ah
         
     loc_7CB9:
-        aeskeygenassist xmm1, xmm0, 0x1
+        aeskeygenassist xmm1, xmm0, 0x45
         pshufd  xmm1, xmm1, 0xFF
         
     loc_7CC4:
@@ -86,13 +87,12 @@ section .rodata
             dd 0x41414141
             dd 0x41414141
 
-    tst:    dd 0x54525E30
-            dd 0x6D1134A0
+    tst:    dd 0x801AFEF7
             dd 0x90385136
-            dd 0x801AFEF7
+            dd 0x6D1134A0
+            dd 0x54525E30
 
-    ptx:    dd 0xc855cc37
-            dd 0xc06a5cb9
-            dd 0xace8d355
-            dd 0x79900c6e
-
+    ptx:    dd 0x3b7c06cd
+            dd 0x09bd8520
+            dd 0x820bcc6b
+            dd 0x12d5f8cc
