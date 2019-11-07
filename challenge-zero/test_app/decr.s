@@ -23,8 +23,6 @@ read_text:
 
 main:
 ;    call    read_text
-    movaps  xmm0, [keya]
-    movaps  xmm3, [ctxt]
     call    a3_aes
     pxor    xmm3, [key0]
     ptest   xmm3, xmm3 
@@ -39,8 +37,9 @@ main:
         call    exit
 
 a3_aes:
+    movaps  xmm3, [ctxt]
+    movaps  xmm0, [keya]
     pxor    xmm3, xmm0
-    aesdec  xmm3, xmm0
 
     movaps  xmm0, [key9]
     aesimc  xmm0, xmm0
@@ -102,4 +101,9 @@ section .rodata
     key8:   dq 0x8e204fc7adef890c, 0x9d62a301b16d2f3a
     key9:   dq 0x5f916cdad1b1231d, 0x739ee0e1eefc43e0
     keya:   dq 0x76af4410293e28ca, 0xebcde711985307f0
-    ctxt:   dq 0xe3ee1acf4a58913d, 0xb02923ca91d38d73
+;    ctxt:   dq 0xe3ee1acf4a58913d, 0xb02923ca91d38d73
+    ctxt:   dd 0x801AFEF7
+            dd 0x90385136
+            dd 0x6D1134A0
+            dd 0x54525E30
+
