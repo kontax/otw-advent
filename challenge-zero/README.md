@@ -17,36 +17,36 @@ This challenge was a mixture of categories, but mainly boiled down to having to 
 
 The first step was to visit the [URL given](https://advent2019.overthewire.org/challenge-zero). This gave an image of a fireplace, as well as a hint. Looking at the source code revealed a comment: `<!-- browser detected: chrome -->`, and the first sentence in the page was `Fox! Fox! Burning bright! In the forests of the night!`. Clearly this hints towards using Firefox for viewing the page. If you keep following the browser suggestions using a user-agent switcher, the following list of hints are supplied:
 
-**Edge**
-This is quite the browser safari, don't you agree?
-Hint: Pause qemu by add -S to the args and type 'c' in the monitor
-
-**Opera**
-Music for the masses
-Hint: Try reading between the lines.
-
-**Safari**
-Put your hands up, this is the Chrome Shop mafia!
-Hint: qemu-system-x86_64 boot.bin -cpu max -s
-
-**Chrome**
-Fox! Fox! Burning bright! In the forests of the night!
-Hint: $ break *0x7c00
-
-**Firefox**
-Did you know: Plain text goes best with a text browser.
-Hint: $ target remote localhost:1234
-
-**Lynx**
-D0NT PU5H M3 C0Z 1M C1053 T0 T3H 3DG3
-Hint: If only the flames wouldn't move that much...
-
-**wget**
-Is that a curling iron in your pocket or are you just happy to see me?
-
-**curl**
-[ascii flames]
-
+**Edge**  
+This is quite the browser safari, don't you agree?  
+Hint: Pause qemu by add -S to the args and type 'c' in the monitor  
+  
+**Opera**  
+Music for the masses  
+Hint: Try reading between the lines.  
+  
+**Safari**  
+Put your hands up, this is the Chrome Shop mafia!  
+Hint: qemu-system-x86_64 boot.bin -cpu max -s  
+  
+**Chrome**  
+Fox! Fox! Burning bright! In the forests of the night!  
+Hint: $ break *0x7c00  
+  
+**Firefox**  
+Did you know: Plain text goes best with a text browser.  
+Hint: $ target remote localhost:1234  
+  
+**Lynx**  
+D0NT PU5H M3 C0Z 1M C1053 T0 T3H 3DG3  
+Hint: If only the flames wouldn't move that much...  
+  
+**wget**  
+Is that a curling iron in your pocket or are you just happy to see me?  
+  
+**curl**  
+[ascii flames]  
+  
 ## Step 2 - Extracting the binary
 
 The curl output is interesting in that it's a constantly changing ascii representation of the GIF on the website, a sample of which is given below. Directly saving this to a file is tricky, as all the bash formatting codes are output too. Cleaning this up leaves 5 distinct "images".
