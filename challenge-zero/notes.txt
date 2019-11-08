@@ -24,3 +24,4 @@ AES Notes:
 https://software.intel.com/sites/default/files/article/165683/aes-wp-2012-09-22-v01.pdf
 https://github.com/Astrako/android_kernel_samsung_exynos7870/blob/a3762bb1761aec8543fae511b087da620e24cee5/arch/x86/crypto/aesni-intel_asm.S
 https://github.com/conceptofproof/CTFs/blob/c7e7cf42519d0432d573842b3829a9ded6ed7317/2017/hitconctf17/void/solve.asm
+http://formaestudio.com/rijndaelinspector/archivos/rijndaelanimation.html
