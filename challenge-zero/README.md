@@ -17,34 +17,34 @@ This challenge was a mixture of categories, but mainly boiled down to having to 
 
 The first step was to visit the [URL given](https://advent2019.overthewire.org/challenge-zero). This gave an image of a fireplace, as well as a hint. Looking at the source code revealed a comment: `<!-- browser detected: chrome -->`, and the first sentence in the page was `Fox! Fox! Burning bright! In the forests of the night!`. Clearly this hints towards using Firefox for viewing the page. If you keep following the browser suggestions using a user-agent switcher, the following list of hints are supplied:
 
-*Edge*
+**Edge**
 This is quite the browser safari, don't you agree?
 Hint: Pause qemu by add -S to the args and type 'c' in the monitor
 
-*Opera*
+**Opera**
 Music for the masses
 Hint: Try reading between the lines.
 
-*Safari*
+**Safari**
 Put your hands up, this is the Chrome Shop mafia!
 Hint: qemu-system-x86_64 boot.bin -cpu max -s
 
-*Chrome*
+**Chrome**
 Fox! Fox! Burning bright! In the forests of the night!
 Hint: $ break *0x7c00
 
-*Firefox*
+**Firefox**
 Did you know: Plain text goes best with a text browser.
 Hint: $ target remote localhost:1234
 
-*Lynx*
+**Lynx**
 D0NT PU5H M3 C0Z 1M C1053 T0 T3H 3DG3
 Hint: If only the flames wouldn't move that much...
 
-*wget*
+**wget**
 Is that a curling iron in your pocket or are you just happy to see me?
 
-*curl*
+**curl**
 [ascii flames]
 
 ## Step 2 - Extracting the binary
@@ -123,7 +123,7 @@ $ base64 -d boot.b64 | uudecode
 
 First things first, we need to know what type of file we're dealing with.
 
-```bash
+```sh
 $ file boot.bin
 boot.bin: DOS/MBR boot sector
 
@@ -257,7 +257,7 @@ To summarize, AES used here works as follows:
 
 The key point to note here is that a new key is generated - the "Round Key" - for each iteration of the algorithm. This key is then XOR'd with the plaintext each round to generate the final ciphertext. Accordingly, the decryption routine takes each round key and runs the algorithm in reverse, which is what is necessary for us to implement. With that said, we need to grab the key just before the AESENC and AESENCLAST instructions are called, and save them for use in our decryption routine.
 
-```
+```sh
 (gdb) b *0x7cdb
 Breakpoint 3 at 0x7cdb
 (gdb) b *0x7ce2
@@ -316,6 +316,8 @@ Breakpoint 4, 0x00007ce2 in ?? ()
 1: /x $xmm0->v2_int64 = {0x985307f076af4410, 0xf88f0bd7ebcde711}
 (gdb)
 ```
+
+## Step 7 - Writing a decryption routine
 
 Now given the keys, and the ciphertext we're testing against located at 0x7de0 (0x54525E306D1134A090385136801AFEF7), we can create a function which decrypts that ciphertext.
 
@@ -387,7 +389,7 @@ section .rodata
 
 This can be assembled with the following command:
 
-```bash
+```sh
 $ nasm -f elf32 -o decr.o decr.s && ld -m elf_i386 -o decr decr.o && rm decr.o
 $ ./decr
 MiLiT4RyGr4d3MbR
@@ -406,5 +408,5 @@ Anyway, here's your flag: → AOTW{31oct__1s__25dec} ←
  - Retr0i
 ```
 
-Given I had already extracted the encryption routine, it was trivial to save the keys as they were generated and then run the decryption routine based off of these saved keys. This file is located in [solve.s](asm/solver.s).
+Given I had already extracted the encryption routine, it was trivial to save the keys as they were generated and then run the decryption routine based off of these saved keys. This file is located in [solve.s](asm/solve.s).
 
