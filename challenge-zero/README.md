@@ -13,7 +13,9 @@ This challenge was a mixture of categories, but mainly boiled down to having to 
 * IDA: Used for reverse-engineering the binary
 * nasm: Assembler used to assemble the final solver
 
-## Step 1 - Gathering the hints
+## Solving the challenge
+
+### Step 1 - Gathering the hints
 
 The first step was to visit the [URL given](https://advent2019.overthewire.org/challenge-zero). This gave an image of a fireplace, as well as a hint. Looking at the source code revealed a comment: `<!-- browser detected: chrome -->`, and the first sentence in the page was `Fox! Fox! Burning bright! In the forests of the night!`. Clearly this hints towards using Firefox for viewing the page. If you keep following the browser suggestions using a user-agent switcher, the following list of hints are supplied:
 
@@ -47,7 +49,7 @@ Is that a curling iron in your pocket or are you just happy to see me?
 **curl**  
 [ascii flames]  
   
-## Step 2 - Extracting the binary
+### Step 2 - Extracting the binary
 
 The curl output is interesting in that it's a constantly changing ascii representation of the GIF on the website, a sample of which is given below. Directly saving this to a file is tricky, as all the bash formatting codes are output too. Cleaning this up leaves 5 distinct "images".
 
@@ -119,7 +121,7 @@ We can further decode this with `uudecode boot.uu`, leaving us with a boot.bin b
 $ base64 -d boot.b64 | uudecode
 ```
 
-## Step 3 - Analysing the binary
+### Step 3 - Analysing the binary
 
 First things first, we need to know what type of file we're dealing with.
 
@@ -141,7 +143,7 @@ m0^RTmy
 
 So it's a Master Boot Record sector of 512 bytes. The hints given to us from the web pages indicate that we should run it using qemu, but first I opened up the file in IDA to see if anything popped out. I used the "Intel 8086" processor type due to the code being 16 bit, although I'm not entirely sure this is necessary. The entry point looks to be the first byte of the binary, which translates to valid x86 code. Two functions are extracted, one which contains various AES assembly instructions, and the other which writes to the screen according to IDA comments. Not too far from the initial entry point is another `int` instruction, which takes keyboard input.
 
-## Step 4 - Getting up and running
+### Step 4 - Getting up and running
 
 I had a few issues with this, due to both the GDB plugin GEF not being able to correctly interpret the instructions, and also having GDB incorrectly calculate the values of the xmm* registers during execution. I'll discuss how I overcame these shortly, but firstly the hints given in the web page show us how to run the binary.
 
@@ -225,7 +227,7 @@ Continuing.
 
 ```
 
-## Step 5 - Debugging
+### Step 5 - Debugging
 
 Using a mixture of IDA and GDB, it became clear that the program does the following:
 
@@ -238,7 +240,7 @@ Using a mixture of IDA and GDB, it became clear that the program does the follow
 6. Run the second encryption routine, which uses the password as a key to encrypt the bytes from 0x7d50 to 0x7de0 (not inclusive) 16 bytes at a time.
 7. Once the bytes have been "encrypted", code execution jumps into those bytes.
 
-## Step 6 - Reverse-engineering the AES routine
+### Step 6 - Reverse-engineering the AES routine
 
 When debugging the encryption routine, I had an issue that the xmm registers seemed to be shifted over by 8 bytes. This caused an issue whereby, for example, only the first 12 bytes of the key were visible in the register, with 8 bytes of the password entered in the last 8 bytes, as opposed to the full 16 bytes expected. This ultimately did not have any effect on the outcome so must just have been an issue with either GDB or qemu, however it caused a bit of confusion when debugging. In the end I just extracted the assembly and re-assembled it locally which seemed to cause the correct values to be shown. This local file allowed for much easier reversing too, so was worth it in the end.
 
@@ -317,7 +319,7 @@ Breakpoint 4, 0x00007ce2 in ?? ()
 (gdb)
 ```
 
-## Step 7 - Writing a decryption routine
+### Step 7 - Writing a decryption routine
 
 Now given the keys, and the ciphertext we're testing against located at 0x7de0 (0x54525E306D1134A090385136801AFEF7), we can create a function which decrypts that ciphertext.
 
