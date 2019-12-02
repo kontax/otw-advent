@@ -81,7 +81,7 @@ def decode_message(message):
             ime_index += 1
             print(ime_method)
 
-        # Left can be newline
+        # Left can be blank
         elif keycode == 100:
             decoded_message.insert(cursor, '')
             cursor += 1
@@ -129,7 +129,7 @@ def decode_message(message):
         else:
             print(f"ERROR: {timestamp}, {keycode}")
 
-        # 
+        # Print the message as it gets solved
         printed_message = decoded_message.copy()
         printed_message[cursor-1] = '\033[4m' + decoded_message[cursor-1] + '\033[0m'
         print(f"{''.join(printed_message)}", end='\r')
@@ -138,6 +138,6 @@ def decode_message(message):
     return decoded_message
 
 
-msg1 = get_encoded_message('sms4.csv')
+msg1 = get_encoded_message('files/sms4.csv')
 dec1 = decode_message(msg1)
 
