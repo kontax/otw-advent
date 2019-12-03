@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+
+key_idx = 0
+key = bytes.fromhex('72 EC C0 2D E3 B2 14 69 6A C3 DD D4 F7 A8 13 25')
+
+pl = bytes.fromhex('18 01 12 95 02 0a 10 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 12 80 02 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41')
+
+c0 = bytes.fromhex('93 61 b1 d5 69 c9 69 d6 b9 0d 63 a2 45 1a b0 f4 75 78 df 40 09 92 81 0c ce 55 20 0c bc a9 56 35 07 68 10 cc a3 55 9b d3 cd b3 73 41 c3 cc 88 cb bc 02 85 30 66 13 b8 ed b5 91 d7 f7 64 a2 68 f4 0b 56 73 a9 1d 47 0b 9c bf 24 0f e2 3a 80 60 c1 1e 0e 19 e4 b5 f7 7a 52 95 43 1d 08 19 46 e5 92 d7 48 17 eb ea 45 bb c2 ed 7a 74 ed 6f 20 c2 a7 91 84 81 8c 67 79 5a 2d ca 72 c3 ed 24 9a 8a e0 c4 2d a6 0e 4a 60 e9 58 fc bd 5e 64 04 3a c6 37 49 d0 a5 15 f5 e5 d3 24 3e 42 d3 bc 66 56 55 f8 b0 f0 27 af 70 2f 8b ff 2e d6 44 14 7b d7 92 be 86 a6 2b 80 9f 0d ff 9e df 1e cb d1 62 07 ae 38 b3 be e9 35 4b 50 07 a5 f5 0e 56 45 d8 1b 4b 88 3b 61 6f b6 fb a3 9d a9 60 1f 3e 25 ce 74 2f 16 df 0f 62 78 69 23 3e 6e c2 9a 8b c8 ca 07 c4 59 16 d3 f1 58 2e 74 58 ff 05 02 44 4f 57 be 2b 27 f7 c0 7c 9f da 3f 30 93 d9 68 15 a9 c5 70 cb 9b c4 b1 37 8e 58 62 da ad eb e8')
+
+c1 = bytes.fromhex('a9 6f 96 f5 01 06 c2 9b 35 58 c5 29 1b 63 ce 35 db 6b 74 e4 ec 97 2f 86 e0 3f 69 fc ca e1 75 63 15 4a 90 53 59 da 46 dd de 84 ea d0 fd d5 ad 45 f1 7b de f1 51 4b 52 da 10 14 06 94 c2 04 ab be 6a 6e b1 3d 26 d4 3d 9e 6d c6 10 6c 5f 4a 87 39 93 82 21 89 23 0d b3 51 cb ab e7 fe 81 07 48 cc d1 2f a1 fc 0e a4 6e c4 b7 2c 78 ce ee cd 16 a0 32 33 78 ae ec fd 0e 33 2b 20 fa 96 28 3b 05 9a b0 7e 8b d0 a1 5d 0c a6 7c 92 ec 46 fe 90 ad 99 aa a5 8f da ee 04 8f b0 80 76 ad e3 79 76 06 f0 ab 10 9a 8b c4 f4 50 d5 70 dc 6b d9 5c 25 f3 0e 92 33 04 23 63 bb bd e6 21 14 96 f8 5f ff 6e ee 9d 14 8f fa 54 8a 01 7a 65 ae 4f f0 a0 3e ad 44 75 ff 8e ec ff 8a 99 41 fd 6f 92 3c c6 4d dd c4 ba fe da e8 9e 1b 00 88 53 82 21 ec b0 c4 c1 4b d4 2a a1 6a c7 3d fe d6 47 ed 46 d8 45 bf 38 2f 88 ed 0b d8 14 6b 1b 0c a7 72 df fb c0 a4 65 c9 e8 1b af d4 75 3f ca c8 0a b7')
+
+c2 = bytes.fromhex('60 75 ec 1b 92 6c 49 9f ce e3 b9 a0 93 aa f3 f6 5b a9 14 d6 c1 eb b4 11 8c e1 cb 30 72 2b e5 16 4e f2 09 01 e8 5b de c6 c0 1a dc cd 07 35 47 53 07 8a 42 7f 11 9e 90 0d 4d 08 27 e4 fe ef 1b 37 57 62 03 95 4a e4 fd 92 5a 4d 38 32 ef 28 9d e1 9b 64 06 68 40 76 6c 09 2b 16 6b b6 cf 39 84 72 ba db 2c ac 1b b8 10 b1 18 ba 25 dd 3c da 64 ba 95 b4 05 e3 66 83 aa cf 7f 5d e9 d3 2c 53 3f b1 48 78 f9 51 05 a0 39 e2 cd 51 f7 93 7a f7 1e a0 2c b7 93 85 b1 19 92 e1 9f c9 bb a6 11 08 a0 9d a6 9c a6 be 41 d1 b9 19 95 94 c1 1d 9d 31 1f 52 de e4 ef 55 0b ef 73 1d 37 08 14 11 f4 95 b2 69 7b 44 76 3d d4 fa 99 fa c9 28 07 d9 32 84 ba 4e cb ca 5f 95 f6 c6 3d a3 ea 3f 54 b9 05 df 06 f5 8c 6a 4c 23 df 6d ab 2a 4a fa 49 f7 80 07 ec 2c 7a 6d 54 8d 58 87 48 10 22 ec 80 8a 54 58 b3 19 e1 58 d3 94 cc d8 02 a2 1a b8 9d 29 7a 19 e2 ba 12 a3 8d b9 9c e2 0a a7 e0 c7')
+
+c3 = bytes.fromhex('5a 1e 0e d7 32 2b 07 62 a3 8f c4 6c b2 a3 78 be 5d 6e fa d5 1f 69 33 65 5e 43 59 16 ea f9 0c 43 85 4e 74 3b 4e 5b fc 70 46 24 ab f5 ad 93 0a 35 e4 21 66 c5 37 33 78 16 c7 c3 0c 57 1a 7a 2a b4 b5 c5 ea c9 c7 21 5e 8b f3 84 08 44 38 e3 1a eb 74 88 41 03 1c b6 91 1e c2 02 74 f9 62 20 d7 b4 02 ff 3b b9 2e d9 f9 ef 98 6f 06 cb d4 87 eb b4 80 ae bd d1 11 49 76 26 3e 4b 0d 63 35 c6 fc 37 68 5b d9 38 71 f0 e5 f6 97 dd 9a 6b f7 e8 04 4c 0c 1e 84 9b 09 2c af fb 07 2a 41 5f d8 6e 5c 1b c5 fc 4b 24 d6 f7 ed 9a 3b cc 9d 50 57 a6 0b 21 8e c5 43 67 20 a6 be 44 7f 9b cc ac eb f9 60 b3 25 b9 55 c0 20 86 cf d4 99 f8 95 06 58 62 1b 75 79 52 2c ed f5 57 5b 1c ce 22 f7 51 ea 82 88 6c 72 17 d4 f9 88 6e 2f 9f 01 34 7f 9e c3 5c a0 9b 42 c0 64 2e 06 dc 71 e5 00 fc b0 e4 81 3e e7 68 4d ca c7 cf ff 52 e0 60 7f 0a a8 c4 3e 3f ca e9 31 4b 18 d2 a2 27 28 41 a4 f3')
+
+c4 = bytes.fromhex('06 aa 45 1e 14 f2 b3 d3 e2 f7 9e a8 29 8e 2b 77 c1 6f a1 52 c4 2c 82 49 e2 c2 57 2c 6d 16 fc fa 2e 5f f0 11 55 76 3a 02 2e ab 08 02 92 91 a7 22 70 e2 f3 c9 71 c9 db 3f 51 70 29 e0 74 4c bc bb 5c d7 04 18 4c f4 d2 56 6d a8 81 10 6c 2c 88 b7 55 8a f0 bb 37 8e a8 b8 fa ae b0 ff 20 56 4e c3 8d 06 a0 b8 e9 66 81 6a ac 20 76 22 e7 2e b0 29 4c 77 97 3e 2f 8d f6 73 be 80 95 2b 2d ac 1c 3c f2 fd 4f 3d 1e f2 9c a7 d6 de 09 f3 8d a3 38 1f db 19 8c 67 2c 6e 0e 1f b0 b6 1e fb 6f 23 bf e0 6c 03 c5 3c 21 0b a2 19 dc 6a 6c 82 eb cf 14 2c 35 74 4f 74 ad cf 9e f6 9c 3b ba 59 a6 ea 80 a9 56 24 5d 73 ae 0c 30 15 06 e3 d6 e0 a5 2e 41 25 63 67 78 ca 68 82 11 4b 43 60 05 05 5c ec fb 28 13 ed b6 bb ff 60 ae 63 77 a1 31 63 f1 24 e4 05 9e ab 8d e2 2c ab 8d 6a bb 0c 5c f2 0e e8 fa 74 04 7d 29 71 79 90 18 18 9c 5f 27 59 4c 1d 70 85 04 1b fc 12 07 96 d1 fa 05 a4')
+
+c5 = bytes.fromhex('a6 0e d0 3a 2b ea 82 16 ea c4 aa 29 d6 8e 2d ba 59 41 2e d2 94 98 ec 46 4c 2e 20 a1 c1 01 03 d0 4c 4f e3 54 b2 84 48 2c a5 94 cb 26 95 16 47 bf df 65 c2 ef 00 88 92 62 88 67 b4 27 92 d9 9a 68 d2 05 fa c3 af c5 c8 3d df 7f 1a f9 60 dd a9 21 67 01 9c 52 5c 1c 95 f0 87 e9 95 36 bc 4b ee 41 12 b8 17 3f 42 bf 2f d7 e9 98 82 a0 f6 d3 9f a6 f4 69 a8 77 eb cf fa c3 fd 8b 8d e5 ce 58 50 59 29 dc 81 04 0c 67 7c 62 41 ee e2 16 72 4f 6c 9d 46 2f ae f8 99 e0 cd e9 4c 82 37 8b 89 6f ef 00 01 10 a5 93 1a ae d9 79 e3 53 64 50 60 e1 dc 13 a8 1f 8d a2 f8 c8 45 54 5e 63 81 f7 df d5 ea e5 ec be d9 69 4a fd 0a e5 08 e4 13 a6 73 04 36 f2 56 d6 7e 74 ea 3e 6c 51 69 46 5f 5e 37 b5 b4 71 f0 06 1c c9 c5 a5 a8 4b dd 54 e7 33 28 c5 d7 78 6e 51 36 63 07 e0 23 e3 0c 35 2d cb 95 5e e1 ab 06 41 1b f1 2a 71 fe 45 d8 58 b8 99 ed 94 b0 fa 6f 6d 67 93 c2 c1 5f 51 56 18')
+
+c6 = bytes.fromhex('8a d4 8f d2 1d ee 57 93 22 04 b2 54 2f 6b 00 c7 a7 52 9a 75 6b cf 78 d5 d1 4c 9d 38 d2 f8 03 f9 31 a5 6f cc 31 59 1f b2 f3 11 eb 29 95 30 9b 1e bb 72 d4 a8 58 b2 f5 e5 c7 71 f9 3f da 00 9a f2 fc 21 d4 71 c4 55 e0 2e e4 8a 37 64 53 a0 71 9c cb 48 fc d1 6f 88 74 fe 33 42 0f df 6f d6 3a 37 53 a9 53 14 f7 68 78 06 2f a6 d2 57 5d cd a4 72 12 36 8e ba 08 db 24 b4 b2 fd f5 bf 20 6b 77 40 09 b8 90 53 ee 19 33 dc fd 7f a1 53 48 38 4b fb 15 52 0e 08 6b e3 0d 8f 75 b1 18 39 cf 9e bd 37 ff f8 35 bc d6 a0 e6 8d f7 5a 95 69 e2 ec d3 52 ec 26 44 6e 66 1b f2 be 56 a5 a1 6f cf d3 28 7b 64 96 17 5c b8 f8 16 57 58 1c 9f 76 e2 ec a0 90 d6 f7 7c c5 f8 a9 5d 86 00 2e 29 91 44 2f 91 f2 48 e9 86 ab a1 1c 9a 44 50 7d e9 3a 22 31 b6 f6 a9 a0 10 42 ec da d4 ad 1c 36 2f 81 e9 f5 8b a1 8f 6b 57 bf fc a4 de b0 de b4 ce f5 f1 77 de 31 23 1b 67 e6 44 da 6d 55 a1 8e')
+
+c7 = bytes.fromhex('ed d3 1a 3f 8d 58 44 56 ed fc ba 40 6b ab 58 41 18 5b a5 3d 0e 11 25 4a 10 4d ac 6c 2d 8a 88 89 39 92 d8 fa 33 a8 4e 9c 52 0f fe 59 ed 85 39 a2 b8 72 93 31 82 7f f9 6a cd 4f a0 76 ba 3d 4a da a7 52 ac 08 d1 84 c4 35 00 92 b9 2f e6 c7 94 3b 1c 73 ce ad b7 68 7d 74 e2 5f d8 af 51 1c a0 dc 82 73 97 54 6f ac be 68 9c af f7 97 f8 3d 25 e0 36 7e 7d 5f 10 d2 7c f1 72 47 82 01 e0 da 27 86 d0 bb 39 7b 9c f3 f0 b4 73 b8 cc 9e 10 f9 04 3e ec 0e 62 8f d5 3f c0 4a c2 08 82 1e 65 d9 1b 92 3c 35 f8 89 35 6c d2 77 24 77 7a 40 87 28 39 01 bf 12 38 53 36 bf d3 34 27 20 89 f2 4a d1 9c 77 3a 78 a3 ea 3d a9 07 c4 fd 99 92 01 34 23 45 22 1b d1 7d 9a b8 3f d7 65 4d 1d 1f 65 c7 a3 78 ca 13 05 04 75 c1 0e ab c5 29 c1 98 eb 60 be 6a 76 3c 33 05 fe 47 cb fa 34 8f a3 9e f6 38 05 59 19 0d f6 f1 e2 e5 54 4e e1 1e 3b 6c 02 5b 16 5a 5b c6 57 43 7e ba a4 07 b9 b2 ec')
+
+c8 = bytes.fromhex('1e 98 6c a4 a1 b4 f0 52 c8 ce 69 40 90 0c e3 5a 31 55 c2 92 41 68 44 ac 38 e2 88 64 ef 2a 62 f7 db 7c 76 2c 2f 0e b3 e5 09 d8 21 f0 6d 28 f1 76 92 60 37 a6 68 1f c6 0d d1 49 f3 45 08 ab 14 5b cc 12 8b fe 6f 74 15 6a 49 27 29 29 f6 0a 79 0b 62 35 cd 14 fe f1 de 56 35 2a b4 df fd 72 43 c8 eb 57 09 e1 2d 2c fc 2f 78 54 39 a4 94 f1 c1 0a fb 0f 7d 99 14 f1 7d 03 89 8c 2e a3 ac 6a f7 d5 7b bf 2d 08 18 6c 62 30 cd 71 16 ee 81 ea 70 07 7e 1e 56 4c 66 65 93 54 9d e1 e5 80 97 7d 3d 91 24 0b c3 44 ff 80 b8 68 5f 2a a0 5c 7e ce 7f 28 64 72 f2 2c c0 82 d9 a9 68 48 cd 72 d9 3a f0 0b 01 93 62 6e 60 d9 7a 08 3a 6f c1 42 a9 1a e1 ba 8a cd 61 00 80 a2 ae 11 83 bf 70 62 06 58 90 9b fc dc f8 69 3d 62 9a 84 5e 1b 19 80 1f f7 7c ef a7 30 d0 20 d6 0c 4e ff 22 95 30 ff f3 c3 25 1d 98 9d 18 5d ac 2e c6 ce f9 db cb f4 64 95 db 5f cb 65 b0 df 2b 49 2c 02 0f 41')
+
+c9 = bytes.fromhex('4d e8 d7 0a d0 ce ca 0b 23 a3 16 6f ee c1 bd af fe cd 24 10 b0 bc fd fd d6 b9 b0 2d 31 e5 31 57 17 d2 44 7b 35 61 ff 98 ea bc 58 ec 92 1f 6d 17 cc 8c 11 e5 0d 33 b4 13 98 5b 76 0e 4a 73 42 11 31 94 c3 ae b3 5b 0e 96 85 89 89 87 e0 e1 70 d3 36 6b ae 4e e5 f5 15 24 cb f0 1e 99 0a 64 b2 dd 0b 81 3d b2 c7 65 43 ca ca fb 32 14 78 c7 db 92 93 57 f0 a9 b8 7e bb c8 b0 3f 29 d0 3b 71 37 1f b9 b9 c4 7e 0f 8d dd 85 26 bf 56 d5 0b 37 98 65 a6 99 68 63 31 0c fb d6 53 e9 cb df d9 4a ec 50 6e 71 e7 8b fe 9e e7 67 13 4e 8f 3d fa 9d e4 6d f9 d5 e3 de b9 f6 1c 9d d3 70 92 96 18 88 cd ee 9b d0 3a da 27 22 0d f8 9a 6f ba 1e 5e 63 7e e0 55 1b 0b 4d d2 87 d4 93 65 1b 0f 60 d3 9e ad 07 dd 99 24 0b 8f 68 28 7b 7e 3e a5 bf 50 98 5e 24 47 8b c7 0d d8 a8 75 61 11 80 55 bb 46 38 18 4a 32 ce 95 2b 99 59 d4 69 21 ca 6b 2a c6 46 50 49 ff 88 dc d3 12 d4 8b cc 0c 1b')
+
+
+full_key = []
+def decode(ciphertext):
+    global key_idx
+    long_key = []
+    for i in range(len(ciphertext)):
+        long_key.append(key[key_idx % len(key)])
+        key_idx += 1
+
+    long_key = bytes(long_key)
+    full_key.extend(hex(a ^ b ^ c) for (a, b, c) in zip(ciphertext, pl, long_key))
+
+decode(c0)
+decode(c1)
+decode(c2)
+decode(c3)
+decode(c4)
+decode(c5)
+decode(c6)
+decode(c7)
+decode(c8)
+decode(c9)
+print(full_key)
