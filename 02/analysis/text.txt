@@ -1,0 +1,241 @@
+Fighting Bat Lv. 2
+You attack the monster, reducing its HP to 79
+The monster attacks you, reducing your HP to 213
+You attack the monster, reducing its HP to 68
+The monster attacks you, reducing your HP to 206
+You attack the monster, reducing its HP to 57
+The monster attacks you, reducing your HP to 199
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 192
+You attack the monster, reducing its HP to 35
+The monster attacks you, reducing your HP to 185
+You attack the monster, reducing its HP to 24
+The monster attacks you, reducing your HP to 178
+You attack the monster, reducing its HP to 13
+The monster attacks you, reducing your HP to 171
+You attack the monster, reducing its HP to 2
+The monster attacks you, reducing your HP to 164
+You have defeated the monster!
+You gained 44 EXP and 10 coins!
+
+
+Fighting Imp Lv. 1
+You attack the monster, reducing its HP to 59
+The monster attacks you, reducing your HP to 158
+You attack the monster, reducing its HP to 48
+The monster attacks you, reducing your HP to 152
+You attack the monster, reducing its HP to 37
+The monster attacks you, reducing your HP to 146
+You attack the monster, reducing its HP to 26
+The monster attacks you, reducing your HP to 140
+You attack the monster, reducing its HP to 15
+The monster attacks you, reducing your HP to 134
+You attack the monster, reducing its HP to 4
+The monster attacks you, reducing your HP to 128
+You have defeated the monster!
+You gained 21 EXP and 10 coins!
+
+Fighting Cobra Lv. 1
+You attack the monster, reducing its HP to 59
+The monster attacks you, reducing your HP to 122
+You attack the monster, reducing its HP to 48
+The monster attacks you, reducing your HP to 116
+You attack the monster, reducing its HP to 37
+The monster attacks you, reducing your HP to 110
+You attack the monster, reducing its HP to 26
+The monster attacks you, reducing your HP to 104
+You attack the monster, reducing its HP to 15
+The monster attacks you, reducing your HP to 98
+You attack the monster, reducing its HP to 4
+The monster attacks you, reducing your HP to 92
+You have defeated the monster!
+You gained 21 EXP and 10 coins!
+
+Fighting Cobra Lv. 2
+You attack the monster, reducing its HP to 79
+The monster attacks you, reducing your HP to 213
+You attack the monster, reducing its HP to 68
+The monster attacks you, reducing your HP to 206
+You attack the monster, reducing its HP to 57
+The monster attacks you, reducing your HP to 199
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 192
+You attack the monster, reducing its HP to 35
+The monster attacks you, reducing your HP to 185
+You attack the monster, reducing its HP to 24
+The monster attacks you, reducing your HP to 178
+You attack the monster, reducing its HP to 13
+The monster attacks you, reducing your HP to 171
+You attack the monster, reducing its HP to 2
+The monster attacks you, reducing your HP to 164
+You have defeated the monster!
+You gained 44 EXP and 10 coins!
+
+Fighting Cobra Lv. 3
+You attack the monster, reducing its HP to 98
+The monster attacks you, reducing your HP to 232
+You attack the monster, reducing its HP to 86
+The monster attacks you, reducing your HP to 224
+You attack the monster, reducing its HP to 74
+The monster attacks you, reducing your HP to 216
+You attack the monster, reducing its HP to 62
+The monster attacks you, reducing your HP to 208
+You attack the monster, reducing its HP to 50
+The monster attacks you, reducing your HP to 200
+You attack the monster, reducing its HP to 38
+The monster attacks you, reducing your HP to 192
+You attack the monster, reducing its HP to 26
+The monster attacks you, reducing your HP to 184
+You attack the monster, reducing its HP to 14
+The monster attacks you, reducing your HP to 176
+You attack the monster, reducing its HP to 2
+The monster attacks you, reducing your HP to 168
+You have defeated the monster!
+You gained 46 EXP and 10 coins!
+
+Fighting Cobra Lv. 1
+You attack the monster, reducing its HP to 58
+The monster attacks you, reducing your HP to 162
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 156
+You attack the monster, reducing its HP to 34
+The monster attacks you, reducing your HP to 150
+You attack the monster, reducing its HP to 22
+The monster attacks you, reducing your HP to 144
+You attack the monster, reducing its HP to 10
+The monster attacks you, reducing your HP to 138
+You have defeated the monster!
+You gained 0 EXP and 10 coins!
+
+Fighting Bat Lv. 2
+You attack the monster, reducing its HP to 78
+The monster attacks you, reducing your HP to 131
+You attack the monster, reducing its HP to 66
+The monster attacks you, reducing your HP to 124
+You attack the monster, reducing its HP to 54
+The monster attacks you, reducing your HP to 117
+You attack the monster, reducing its HP to 42
+The monster attacks you, reducing your HP to 110
+You attack the monster, reducing its HP to 30
+The monster attacks you, reducing your HP to 103
+You attack the monster, reducing its HP to 18
+The monster attacks you, reducing your HP to 96
+You attack the monster, reducing its HP to 6
+The monster attacks you, reducing your HP to 89
+You have defeated the monster!
+You gained 22 EXP and 10 coins!
+Done
+
+Fighting Cobra Lv. 1
+You attack the monster, reducing its HP to 58
+The monster attacks you, reducing your HP to 234
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 228
+You attack the monster, reducing its HP to 34
+The monster attacks you, reducing your HP to 222
+You attack the monster, reducing its HP to 22
+The monster attacks you, reducing your HP to 216
+You attack the monster, reducing its HP to 10
+The monster attacks you, reducing your HP to 210
+You have defeated the monster!
+You gained 0 EXP and 10 coins!
+
+Fighting Bat Lv. 1
+You attack the monster, reducing its HP to 58
+The monster attacks you, reducing your HP to 204
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 198
+You attack the monster, reducing its HP to 34
+The monster attacks you, reducing your HP to 192
+You attack the monster, reducing its HP to 22
+The monster attacks you, reducing your HP to 186
+You attack the monster, reducing its HP to 10
+The monster attacks you, reducing your HP to 180
+You have defeated the monster!
+You gained 0 EXP and 10 coins!
+
+Fighting Spider Lv. 1
+You attack the monster, reducing its HP to 58
+The monster attacks you, reducing your HP to 174
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 168
+You attack the monster, reducing its HP to 34
+The monster attacks you, reducing your HP to 162
+You attack the monster, reducing its HP to 22
+The monster attacks you, reducing your HP to 156
+You attack the monster, reducing its HP to 10
+The monster attacks you, reducing your HP to 150
+You have defeated the monster!
+You gained 0 EXP and 10 coins!
+
+ighting Bat Lv. 3
+You attack the monster, reducing its HP to 98
+The monster attacks you, reducing your HP to 142
+You attack the monster, reducing its HP to 86
+The monster attacks you, reducing your HP to 134
+You attack the monster, reducing its HP to 74
+The monster attacks you, reducing your HP to 126
+You attack the monster, reducing its HP to 62
+The monster attacks you, reducing your HP to 118
+You attack the monster, reducing its HP to 50
+The monster attacks you, reducing your HP to 110
+You attack the monster, reducing its HP to 38
+The monster attacks you, reducing your HP to 102
+You attack the monster, reducing its HP to 26
+The monster attacks you, reducing your HP to 94
+You attack the monster, reducing its HP to 14
+The monster attacks you, reducing your HP to 86
+You attack the monster, reducing its HP to 2
+The monster attacks you, reducing your HP to 78
+You have defeated the monster!
+You gained 46 EXP and 10 coins!
+
+ighting Spider Lv. 4
+You attack the monster, reducing its HP to 118
+The monster attacks you, reducing your HP to 231
+You attack the monster, reducing its HP to 106
+The monster attacks you, reducing your HP to 222
+You attack the monster, reducing its HP to 94
+The monster attacks you, reducing your HP to 213
+You attack the monster, reducing its HP to 82
+The monster attacks you, reducing your HP to 204
+You attack the monster, reducing its HP to 70
+The monster attacks you, reducing your HP to 195
+You attack the monster, reducing its HP to 58
+The monster attacks you, reducing your HP to 186
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 177
+You attack the monster, reducing its HP to 34
+The monster attacks you, reducing your HP to 168
+You attack the monster, reducing its HP to 22
+The monster attacks you, reducing your HP to 159
+You attack the monster, reducing its HP to 10
+The monster attacks you, reducing your HP to 150
+You have defeated the monster!
+You gained 72 EXP and 11 coins!
+
+Fighting Spider Lv. 5
+You attack the monster, reducing its HP to 137
+The monster attacks you, reducing your HP to 140
+You attack the monster, reducing its HP to 124
+The monster attacks you, reducing your HP to 130
+You attack the monster, reducing its HP to 111
+The monster attacks you, reducing your HP to 120
+You attack the monster, reducing its HP to 98
+The monster attacks you, reducing your HP to 110
+You attack the monster, reducing its HP to 85
+The monster attacks you, reducing your HP to 100
+You attack the monster, reducing its HP to 72
+The monster attacks you, reducing your HP to 90
+You attack the monster, reducing its HP to 59
+The monster attacks you, reducing your HP to 80
+You attack the monster, reducing its HP to 46
+The monster attacks you, reducing your HP to 70
+You attack the monster, reducing its HP to 33
+The monster attacks you, reducing your HP to 60
+You attack the monster, reducing its HP to 20
+The monster attacks you, reducing your HP to 50
+You attack the monster, reducing its HP to 7
+The monster attacks you, reducing your HP to 40
+You have defeated the monster!
+You gained 75 EXP and 11 coins!
