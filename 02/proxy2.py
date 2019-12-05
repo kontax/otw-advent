@@ -74,5 +74,18 @@ while True:
                 decoded.append(b ^ KEY[SRV_IDX % len(KEY)] ^ init[SRV_IDX % len(init)])
                 SRV_IDX += 1
             print(hexdump.hexdump(bytes(decoded)))
+            test = input("Edit bytes? ")
+            if test == 'Y' or test == 'y':
+                print("Original: ")
+                print(' '.join(["{:02x}".format(x) for x in decoded]))
+                new_buf = bytes.fromhex(input())
+                SRV_IDX -= len(buf)
+                new_buf_list = []
+                for b in new_buf:
+                    new_buf_list.append(b ^ KEY[SRV_IDX % len(KEY)] ^ init[SRV_IDX % len(init)])
+                    SRV_IDX += 1
+                print(hexdump.hexdump(buf))
+                buf = bytes(new_buf_list)
+                print(hexdump.hexdump(buf))
             client.send(buf)
 

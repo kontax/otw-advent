@@ -13,6 +13,16 @@ BUFFER = 4096   # Number of bytes to send/receive at a time
 CLI_IDX = 0
 SRV_IDX = 0
 
+LOOKUP = {
+    'lvl_up': 0x08,
+    'xp'    : 0x10
+    'max_xp': 0x18,
+    'lv'    : 0x20,
+    'hp'    : 0x28,
+    'max_hp': 0x30,
+    'g'     : 0x38
+}
+
 def num_convert(num1, num2):
     # Convert the bytes into a number
     # Byte1 is the initial, byte2 gets added to the first nibble
@@ -23,7 +33,7 @@ def num_convert(num1, num2):
     #     0xA + 0x02 = 0xC = 12
     #     return 0x12C
 
-    high, low = num1 >> 4, num1 & 0x0F
+    high, low = num1 >> 4, num1 & 0x0F 
     return int(str(high + num2) + hex(low).replace('0x', ''), 16)
 
 
