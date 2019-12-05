@@ -36,8 +36,12 @@ client.send(init)
 
 # Send data to the client
 while True:
-    send_data = input(f"Send bytes:")
-    data_to_send = bytes.fromhex(send_data)
+    send_data = input(f"Send bytes: ")
+    if send_data == 'Y' or send_data == 'y':
+        with open('data_file', 'r') as f:
+            data_to_send = bytes.fromhex(f.read())
+
+    #data_to_send = bytes.fromhex(send_data)
 
     print("\n----- Server -----")
     print(hexdump.hexdump(data_to_send))

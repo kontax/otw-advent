@@ -40,11 +40,11 @@ KEY = [0xf9, 0x8c, 0x63, 0x6d, 0x88, 0x71, 0x6d, 0xfe, 0x92, 0x8f, 0xff, 0x37,
 
 
 # Get the token to send to the client
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((HOST, CLIENT_PORT))
-server_id = client.recv(1024).split()[2]
-print(f"Server ID: {server_id.decode()}")
-print(f"Visit http://3.93.128.89:12020/ and enter {server_id.decode()}")
+#client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#client.connect((HOST, CLIENT_PORT))
+#server_id = client.recv(1024).split()[2]
+#print(f"Server ID: {server_id.decode()}")
+#print(f"Visit http://3.93.128.89:12020/ and enter {server_id.decode()}")
 
 # Connect to the real server and get the initial response
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -52,7 +52,7 @@ server.connect((HOST, SERVER_PORT))
 init = server.recv(BUFFER)
 print("\n----- Server -----")
 print(hexdump.hexdump(init))
-client.send(init)
+#client.send(init)
 
 # Set up lists for the newly found key values and plaintext
 thekey = []
@@ -64,32 +64,33 @@ with open('key', 'w') as f:
 
 # Send data to the client
 while True:
-    rlist = select.select([client, server], [], [])[0]
+    rlist = select.select([server], [], [])[0]
 
-    if client in rlist:
-        buf = client.recv(BUFFER)
-        if len(buf) > 0:
-            print("\n----- Client -----")
-            print(hexdump.hexdump(buf))
-            decoded = []
-            for b in buf:
-                # We only want the first 282 bytes of plaintext:
-                # 6 + 16 (uname) + 4 + 256 (pw)
-                if CLI_IDX < 282:
-                    with open('key', 'ab') as f:
-                        f.write(bytes([KEY[CLI_IDX]]))
-                    thekey.append(KEY[CLI_IDX])
-                    plaintext.append(b ^ KEY[CLI_IDX] ^ init[CLI_IDX % len(init)])
-                # For the remaining, we use the known plaintext to 
-                # derive the unknown key
-                else:
-                    thebyte = b ^ plaintext[CLI_IDX % len(plaintext)] ^ init[CLI_IDX % len(init)]
-                    with open('key', 'ab') as f:
-                        f.write(bytes([thebyte]))
-                    thekey.append(thebyte)
-                CLI_IDX += 1
-            server.send(buf)
-            print(f"KEY LENGTH: {len(thekey)}")
+    with open('login', 'r') as f:
+        buf = bytes.fromhex(f.read())
+
+    if len(buf) > 0:
+        print("\n----- Client -----")
+        print(hexdump.hexdump(buf))
+        decoded = []
+        for b in buf:
+            # We only want the first 282 bytes of plaintext:
+            # 6 + 16 (uname) + 4 + 256 (pw)
+            if CLI_IDX < 282:
+                with open('key', 'ab') as f:
+                    f.write(bytes([KEY[CLI_IDX]]))
+                thekey.append(KEY[CLI_IDX])
+                plaintext.append(b ^ KEY[CLI_IDX] ^ init[CLI_IDX % len(init)])
+            # For the remaining, we use the known plaintext to 
+            # derive the unknown key
+            else:
+                thebyte = b ^ plaintext[CLI_IDX % len(plaintext)] ^ init[CLI_IDX % len(init)]
+                with open('key', 'ab') as f:
+                    f.write(bytes([thebyte]))
+                thekey.append(thebyte)
+            CLI_IDX += 1
+        server.send(buf)
+        print(f"KEY LENGTH: {len(thekey)}")
 
     if server in rlist:
         buf = server.recv(BUFFER)
