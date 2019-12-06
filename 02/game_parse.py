@@ -15,7 +15,7 @@ SRV_IDX = 0
 
 LOOKUP = {
     'lvl_up': 0x08,
-    'xp'    : 0x10
+    'xp'    : 0x10,
     'max_xp': 0x18,
     'lv'    : 0x20,
     'hp'    : 0x28,
@@ -24,17 +24,7 @@ LOOKUP = {
 }
 
 def num_convert(num1, num2):
-    # Convert the bytes into a number
-    # Byte1 is the initial, byte2 gets added to the first nibble
-    # of byte1, turned into decimal, and appended, before being
-    # turned back into hex.
-    #
-    # eg. 0xAC 0x02
-    #     0xA + 0x02 = 0xC = 12
-    #     return 0x12C
-
-    high, low = num1 >> 4, num1 & 0x0F 
-    return int(str(high + num2) + hex(low).replace('0x', ''), 16)
+    return ((num1 & 0x7f) | (num2 << 7))
 
 
 def parse(stream):
@@ -55,22 +45,26 @@ def parse_attack(stream):
     attack_details = []
     while stream[0] == 0x0a:
         attack_length = stream[1]
-        assert stream[2] == 0x08
-        if stream[4] == 0x10:
-            enemy_attack = stream[3]
-            next_opt = 4
+        stream = stream[2:]
+        assert stream[0] == 0x08
+        if stream[1] > 0x7f:
+            enemy_attack = num_convert(stream[1], stream[2])
+            stream = stream[3:]
         else:
-            enemy_attack = num_convert(stream[3], stream[4])
-            next_opt = 5
+            enemy_attack = stream[1]
+            stream = stream[2:]
 
-        assert stream[next_opt] == 0x10
-        if next_opt + 2 == attack_length:
-            our_attack = stream[next_opt+1]
+        assert stream[0] == 0x10
+        if stream[1] > 0x7f:
+            our_attack = num_convert(stream[1], stream[2])
+            stream = stream[3:]
         else:
-            our_attack = num_convert(stream[next_opt+1], stream[next_opt+2])
+            our_attack = stream[1]
+            stream = stream[2:]
+
         # Store length plus initial byte plus last
         attack_details.append({'attack': {'attack': our_attack, 'defend': enemy_attack}})
-        stream = stream[attack_length+2:]
+        #stream = stream[attack_length+2:]
 
     if stream[0] == 0x2a or len(attack_details) == 0:
         # Low HP

@@ -8,7 +8,7 @@ HOST = '3.93.128.89'
 CLIENT_PORT = 12022
 SERVER_PORT = 12021
 
-BUFFER = 1024   # Number of bytes to send/receive at a time
+BUFFER = 4096   # Number of bytes to send/receive at a time
 
 CLI_IDX = 0
 SRV_IDX = 0
