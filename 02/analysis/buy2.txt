@@ -1,0 +1,823 @@
+{
+  "items": {
+    "length": 1177,
+    "storage": [
+      {
+        "length": 1083,
+        "name": "shop",
+        "items": [
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 23, "lvl": 8, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000000 }, "sell_at": { "length": 2, "shop?": "0802" } }
+        ],
+        "other": "18e807"
+    },
+    {
+        "length": 87,
+        "name": "bag",
+        "items": [
+            { "length": 29, "lvl": 6, "hp": 100000, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 10 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } }
+        ],
+        "other": "1806"
+      }
+    ],
+    "other": "1835"
+  }
+}
+
+{
+  "items": {
+    "length": 1177,
+    "storage": [
+      {
+        "length": 1056,
+        "name": "shop",
+        "items": [
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 23, "lvl": 8, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000000 }, "sell_at": { "length": 2, "shop?": "0802" } }
+        ],
+        "other": "18e807"
+      },
+      {
+        "length": 114,
+        "name": "bag",
+        "items": [
+            { "length": 29, "lvl": 6, "hp": 100000, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 10 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } }
+        ],
+        "other": "1806"
+      }
+    ],
+    "other": "182b"
+  }
+}
+
+{
+  "items": {
+    "length": 1178,
+    "storage": [
+      {
+        "length": 1029,
+        "name": "shop",
+        "items": [
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 27, "lvl": 1, "dmg": 20, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100 }, "sell_at": { "length": 4, "shop?": "0802", "price": 80 } },
+            { "length": 28, "lvl": 2, "dmg": 40, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 800 } },
+            { "length": 28, "lvl": 3, "dmg": 80, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000 }, "sell_at": { "length": 5, "shop?": "0802", "price": 8000 } },
+            { "length": 30, "lvl": 4, "dmg": 160, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -100000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 80000 } },
+            { "length": 30, "lvl": 5, "dmg": 320, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -1000000 }, "sell_at": { "length": 6, "shop?": "0802", "price": 800000 } },
+            { "length": 23, "lvl": 8, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10000000 }, "sell_at": { "length": 2, "shop?": "0802" } }
+        ],
+        "other": "18e807"
+      },
+      {
+        "length": 141,
+        "name": "bag",
+        "items": [
+            { "length": 29, "lvl": 6, "hp": 100000, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 10 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } },
+            { "length": 25, "dmg": 10, "buy_at": { "length": 15, "shop?": "0802", "bag?": "1001", "price": -10 }, "sell_at": { "length": 4, "shop?": "0802", "price": 8 } }
+        ],
+        "other": "1806"
+      }
+    ],
+    "other": "1821"
+  }
+}
+
+{
+  "items": {
+    "length": 1178,
+    "storage": [
+      {
+        "length": 1002,
+        "name": "shop",
+        "items": [
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 27,
+            "lvl": 1,
+            "dmg": 20,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 80
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 2,
+            "dmg": 40,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 800
+            }
+          },
+          {
+            "length": 28,
+            "lvl": 3,
+            "dmg": 80,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000
+            },
+            "sell_at": {
+              "length": 5,
+              "shop?": "0802",
+              "price": 8000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 4,
+            "dmg": 160,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -100000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 80000
+            }
+          },
+          {
+            "length": 30,
+            "lvl": 5,
+            "dmg": 320,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -1000000
+            },
+            "sell_at": {
+              "length": 6,
+              "shop?": "0802",
+              "price": 800000
+            }
+          },
+          {
+            "length": 23,
+            "lvl": 8,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10000000
+            },
+            "sell_at": {
+              "length": 2,
+              "shop?": "0802"
+            }
+          }
+        ],
+        "other": "18e807"
+      },
+      {
+        "length": 168,
+        "name": "bag",
+        "items": [
+          {
+            "length": 29,
+            "lvl": 6,
+            "hp": 100000,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 10
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          },
+          {
+            "length": 25,
+            "dmg": 10,
+            "buy_at": {
+              "length": 15,
+              "shop?": "0802",
+              "bag?": "1001",
+              "price": -10
+            },
+            "sell_at": {
+              "length": 4,
+              "shop?": "0802",
+              "price": 8
+            }
+          }
+        ],
+        "other": "1806"
+      }
+    ],
+    "other": "1817"
+  }
+}
