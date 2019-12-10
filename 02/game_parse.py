@@ -333,7 +333,6 @@ thekey = []
 output = []
 
 def signal_handler(sig, frame):
-    print("CTRL-C PRESSED")
     server.close()
     client.close()
     sys.exit(0)
@@ -344,6 +343,7 @@ signal.signal(signal.SIGINT, signal_handler)
 while True:
     rlist = select.select([client, server], [], [])[0]
 
+    """
     if client in rlist:
         buf = client.recv(BUFFER)
         if len(buf) > 0:
@@ -354,6 +354,33 @@ while True:
                 CLI_IDX += 1
             print(hexdump.hexdump(bytes(decoded)))
             server.send(buf)
+    """
+
+
+    if client in rlist:
+        buf = client.recv(BUFFER)
+        if len(buf) > 0:
+            print("\n----- Client -----")
+            decoded = []
+            for b in buf:
+                decoded.append(b ^ KEY[CLI_IDX % len(KEY)] ^ init[CLI_IDX % len(init)])
+                CLI_IDX += 1
+            print(hexdump.hexdump(bytes(decoded)))
+            test = input("Edit bytes? ")
+            if test == 'Y' or test == 'y':
+                print("Original: ")
+                print(' '.join(["{:02x}".format(x) for x in decoded]))
+                new_buf = bytes.fromhex(input())
+                CLI_IDX -= len(buf)
+                new_buf_list = []
+                for b in new_buf:
+                    new_buf_list.append(b ^ KEY[CLI_IDX % len(KEY)] ^ init[CLI_IDX % len(init)])
+                    CLI_IDX += 1
+                print(hexdump.hexdump(buf))
+                buf = bytes(new_buf_list)
+                print(hexdump.hexdump(buf))
+            server.send(buf)
+
 
     if server in rlist:
         buf = server.recv(BUFFER)
@@ -364,7 +391,7 @@ while True:
             for b in buf:
                 decoded.append(b ^ KEY[SRV_IDX % len(KEY)] ^ init[SRV_IDX % len(init)])
                 SRV_IDX += 1
-            print(hexdump.hexdump(bytes(decoded)))
+            #print(hexdump.hexdump(bytes(decoded)))
             output.extend(decoded)
             if len(output) > 2:
                 parsed = parse(bytes(output))
@@ -374,6 +401,9 @@ while True:
                     print(ex)
                     print(parsed)
                 output = []
+
+            else:
+                print(hexdump.hexdump(buf))
 
             client.send(buf)
 
