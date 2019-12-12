@@ -12,7 +12,8 @@ B0 04
 SUCCEED - CLUB
    |LEN|
 1A 97 09 
-0A BB 08 08 02 
+0A BB 08 
+08 02 
    |LEN| |LVL| |DMG---|    |LEN|   LVL?  |XP?  |Buy Price---------------|       |LEN|    ??    |Sell Price| <- uses bin shift
 12 1B    08 01 10 14    22 0F   08 02 10 01 18 9C FF FF FF FF FF FF FF FF 01 22 04    08 02    18 50 
 12 1C    08 02 10 28    22 0F   08 02 10 01 18 98 F8 FF FF FF FF FF FF FF 01 22 05    08 02    18 A0 06 
