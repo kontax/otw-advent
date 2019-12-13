@@ -18,7 +18,7 @@ def twos_comp(val, bits):
         val = val - (1 << bits)        # compute negative value
     return val                         # return positive value as is
 
-x = BytesIO(bytes.fromhex('e807'))
+x = BytesIO(bytes.fromhex('b0 09 ef 08 97 09 d6 08'))
 print(n(x))
 print(n(x))
 print(n(x))

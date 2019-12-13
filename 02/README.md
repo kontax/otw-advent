@@ -2,7 +2,25 @@
 
 ## Overview
 
+This mostly boiled down to being a reverse engineering challenge, whereby a 
+client/server games bytes needed to be intercepted and understood, before
+being modified in order to grab the flags which were split between client
+and server.
+
+First steps are to create a proxy to intercept the bytes being sent, and
+secondly to decrypt them. Once this had been achieved, understanding what
+all the bytes meant was required. A bug in the game was then found which
+allowed for duplicating and selling items in order to get enough cash to
+buy the Scroll of Secrets to get the second half of the flag, before 
+understanding the different types of items available in order to spoof the 
+client from revealing the first half.
+
+Overall this was quite a tricky challenge to complete, mainly due to the amount
+of time required to understand the bytes.
+
 ## Required Software
+
+* Python
 
 ## Solving the challenge
 
@@ -158,3 +176,108 @@ strengths from a seller. The seller also has a "scroll of infinite wisdom"
 which we can assume contains the flag, but it's far too expensive to by without
 serious time put into playing. We need to find a way to get more cash by 
 analysing the now decrypted data between client and server.
+
+This was the most time consuming part of the process - it involved looking at 
+each stream of bytes after every event and trying to compare them for changes.
+The first two bytes denote the length of the next stream of bytes in little
+endian form. Any other length within the data was encoded in 7 bits rather than
+8, meaning the following code needed to be used to decode it:
+
+```python
+from io import BytesIO
+
+def n(stream):
+    shift = 0
+    ret = 0
+    is_negative = True
+    while is_negative:
+        num = int.from_bytes(stream.read(1), 'little')
+        ret |= ((num & 0x7f) << shift)
+        shift += 7
+        is_negative = num >= 0x7f
+
+    return twos_comp(ret, 64)
+
+def twos_comp(val, bits):
+    """compute the 2's complement of int value val"""
+    if (val & (1 << (bits - 1))) != 0: # if sign bit is set e.g., 8bit: 128-255
+        val = val - (1 << bits)        # compute negative value
+    return val                         # return positive value as is
+
+x = BytesIO(bytes.fromhex('b0 09 ef 08 97 09 d6 08'))
+print(n(x))
+print(n(x))
+print(n(x))
+print(n(x))
+```
+
+I'm unsure whether this is common practice or not, though it wouldn't surprise
+me to find out that was the case.
+
+The data sent from the client was reasonably short, so it could be boiled down
+to the following (parts in square brackets were optional):
+
+Attack a monster:
+`1a {sz} 08 {lv}`
+    * sz: Length of the remaining bytes
+    * lv: The level of the monster to attack
+
+Use an item:
+`2a {sz} [18 {idx}]`
+    * sz: Length of the remaining bytes
+    * idx: Index of the item in the bag
+
+Transfer an item:
+`22 {sz} [{dir} {loc} {dir} {loc} 18 {idx}]`
+    * sz: Length of the remaining bytes
+    * dir: Either 0x08 or 0x10, representing to or from respectively
+    * loc: Either 0x01, 0x02 or blank, representing the stash, shop or bag respectively
+
+After much messing around, it turns out that if you transfer an item to the same
+location it gets duplicated rather than transfered. This allows you to simply 
+duplicate the items in the stash and sell them before doing the same with a 
+more expensive item. This can be repeated until enough cash has been acquired 
+to buy the Scroll of Secrets.
+
+The majority of the process is done with the [server_flag.py](files/server_flag.py)
+script, and once we log in with the same username and password, we can buy the
+scroll and use it to get the following message:
+
+> Congratulations! Here is the server-side flag: _is_f0R_Th3_13373sT} The 
+> client-side flag is clearly written on a piece of paper that was lost by the 
+> shopkeeper some time ago. If only you could find it...
+
+Great, not done yet...
+
+### Step 4 - Client side
+
+Thankfully most of the game analysis had been complete at this stage, a pretty
+comprehensive understanding of what the bytes mean is required. Essentially a
+fake server needs to be created and data sent to the client when required. This
+is done within the [fake_server.py](files/fake_server.py) which responds with
+bytes written in text form. 
+
+The initial login bytes can be copied from a normal server response. This is
+split into sections describing the state of the game. After the initial 2 byte
+length, the byte `0A` denotes the beginning of the summary data. This includes
+data such as health, cash, XP etc. Once these are parsed, three sections 
+beginning with `1A` denote the start of the details about the items. Similar to
+the transfer, `08 01` is for the stash, `08 02` is the shop, and the bag is 
+left blank.
+
+Each item within the location begins with `12` and contains various details 
+about the item, including it's damage, buy price, and sell price. An item of
+interest is the one begining with `08`, as it seems to be unique for each
+type of item eg. `04` = Titanium Sword, `05` = Diamond Sword, `06` = Potion
+and `08` = Scroll of Secrets.
+
+A notable ommission is item `07`, so we can craft this by copying over the
+Scroll of Secrets bytes and changing this one value (alongside the respective
+byte lengths), and sending that on a response to buying something. This gives
+us a new item in the shop with the following description:
+
+> Mystery Letter
+> A letter which reads: 'Here is the client side flag: AOTW{B14ckbOx_N3tw0rK_r3v
+
+
+`AOTW{B14ckbOx_N3tw0rK_r3v_is_f0R_Th3_13373sT}`
