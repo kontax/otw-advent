@@ -217,21 +217,18 @@ me to find out that was the case.
 The data sent from the client was reasonably short, so it could be boiled down
 to the following (parts in square brackets were optional):
 
-Attack a monster:
-`1a {sz} 08 {lv}`
-    * sz: Length of the remaining bytes
-    * lv: The level of the monster to attack
+Attack a monster: `1a {sz} 08 {lv}`
+* sz: Length of the remaining bytes
+* lv: The level of the monster to attack
 
-Use an item:
-`2a {sz} [18 {idx}]`
-    * sz: Length of the remaining bytes
-    * idx: Index of the item in the bag
+Use an item: `2a {sz} [18 {idx}]`
+* sz: Length of the remaining bytes
+* idx: Index of the item in the bag
 
-Transfer an item:
-`22 {sz} [{dir} {loc} {dir} {loc} 18 {idx}]`
-    * sz: Length of the remaining bytes
-    * dir: Either 0x08 or 0x10, representing to or from respectively
-    * loc: Either 0x01, 0x02 or blank, representing the stash, shop or bag respectively
+Transfer an item: `22 {sz} [{dir} {loc} {dir} {loc} 18 {idx}]`
+* sz: Length of the remaining bytes
+* dir: Either 0x08 or 0x10, representing to or from respectively
+* loc: Either 0x01, 0x02 or blank, representing the stash, shop or bag respectively
 
 After much messing around, it turns out that if you transfer an item to the same
 location it gets duplicated rather than transfered. This allows you to simply 
