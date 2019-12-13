@@ -4,6 +4,7 @@ import select
 import signal
 import socket
 import sys
+from time import sleep
 import json
 from io import BytesIO
 from struct import pack, unpack
@@ -209,7 +210,7 @@ def get_items(stream):
 
     # Store total slots
     if stage == 0x18:
-        storage['slots'] = num_convert(stream)
+        storage['slots'] = f"{len(items)} / {num_convert(stream)}"
     else:
         stream.seek(stream.tell()-1)
 
@@ -344,6 +345,21 @@ def use(num=0):
             else b'\x18' + num_unconvert(num)
     return b'\x2a' + sz(x) + x
 
+def item(direction, location, index):
+    x = bytes([int(direction), int(location), 0x18, int(index)])
+    return b'\x22' + sz(x) + x
+
+def duplicate(location, index):
+    x = bytes([0x08, int(location), 0x18, int(index), 0x10, int(location)])
+    return b'\x22' + sz(x) + x
+
+def buy_to_stash(index):
+    x = b'\x08\x02\x18' + bytes([int(index)]) + b'\x10\x01'
+    return b'\x22' + sz(x) + x
+
+def sell_from_stash(index):
+    x = b'\x08\x01\x18' + bytes([int(index)]) + b'\x10\x02'
+    return b'\x22' + sz(x) + x
 
 def send_command(sock, command_bytes, init):
 
@@ -370,8 +386,18 @@ def get_output(server, init):
     global KEY
     global SRV_IDX
 
-    buf = server.recv(BUFFER)
-    buf += server.recv(BUFFER)
+    buf = server.recv(2)
+    decoded_len = []
+    for b in buf:
+        decoded_len.append(b ^ KEY[SRV_IDX % len(KEY)] ^ init[SRV_IDX % len(init)])
+        SRV_IDX += 1
+
+    stream_length = unpack("<H", bytes(decoded_len))[0]
+    SRV_IDX -= 2
+
+    while len(buf) < (stream_length - 2):
+        buf += server.recv(BUFFER)
+
     if len(buf) > 0:
         print("\n----- Server -----")
 
@@ -407,7 +433,20 @@ def print_menu(stage="s"):
         print("{n} - Item Number")
 
     elif stage == "i":
-        print("Not implemented")
+        print("Options:")
+        print_menu("id")
+        print_menu("il")
+        print_menu("ii")
+    elif stage == "id":
+        print(" - Direction:")
+        print("   p - Put")
+        print("   g - Get")
+    elif stage == "il":
+        print(" - Location:")
+        print("   h - Shop")
+        print("   t - Storage")
+    elif stage == "ii":
+        print(" - Index: {n}")
 
 
 # Get the token to send to the client
@@ -436,17 +475,63 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-"""
-lvl = int(input("Level: "))
-x = 0
-while x < 100:
-    send_command(server, attack(lvl+2), init)
-    output = get_output(server, init)
-    lvl = output['lv']
+# Fight 10 times to get 100 g
+for i in range(10):
+    print(f"Attack {i}")
+    send_command(server, attack(3), init)
     send_command(server, use(), init)
-    get_output(server, init)
-    x += 1
-"""
+    sleep(0.1)
+
+
+# Buy an item from idx 1 for 5 rounds
+for i in range(5):
+    print(f"Buying {i}")
+    send_command(server, buy_to_stash("1"), init)
+    sleep(0.1)
+
+    # Duplicate it 12 times
+    for j in range(12):
+        print(f"Duplicate {j}")
+        send_command(server, duplicate("1", "0"), init)
+        sleep(0.1)
+
+    # Sell each one
+    for j in range(13):
+        print(f"Selling {j}")
+        send_command(server, sell_from_stash("0"), init)
+        sleep(0.1)
+
+server.close()
+CLI_IDX = 0
+SRV_IDX = 0
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.connect((HOST, SERVER_PORT))
+init = server.recv(BUFFER)
+print("\n----- Server -----")
+print(hexdump.hexdump(init))
+print("Sleeping for 20s to relogin")
+
+sleep(20)
+send_command(server, login(username, password), init)
+output = get_output(server, init)
+
+shop = [x for x in output['items'] if x['name'] == 'shop'][0]
+index = [i for (i, v) in enumerate(shop['storage'][0]['items'])][0]
+
+# Buy the scroll
+send_command(server, item(0x08, 0x01, index), init)
+get_output(server, init)
+
+# Use the scroll
+send_command(server, use("2"), init)
+get_output(server, init)
+
+
+
+
+print("Done")
+exit(0)
 
 # Send data to the client
 while True:
@@ -482,3 +567,28 @@ while True:
 
         send_command(server, hex_bytes, init)
         get_output(server, init)
+
+    elif cmd == "i":
+        print_menu(cmd)
+        options = []
+        d = ""
+        l = ""
+        i = 0
+        while d not in ['p', 'g']:
+            print_menu("id")
+            d = input("Direction: ")
+        while l not in ['h', 't']:
+            print_menu("il")
+            l = input("Location: ")
+        try:
+            print_menu("ii")
+            i = int(input("Index: "))
+        except:
+            continue
+
+        d = 0x10 if d == 'p' else 0x08
+        l = 0x01 if l == 't' else 0x02
+
+        send_command(server, item(d, l, i), init)
+        get_output(server, init)
+

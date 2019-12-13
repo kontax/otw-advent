@@ -52,6 +52,22 @@ def num_convert(stream):
 
     return twos_comp(ret, 64)
 
+def num_unconvert(val):
+    val = val % (1<<64)
+    bitlen = len("{:0b}".format(val))
+    output = []
+    while bitlen >= 0:
+        if bitlen >= 7:
+            output.append((val & 0x7f) | 0x80)
+        else:
+            output.append(val & 0x7f)
+
+        val >>= 7
+        bitlen -= 7
+
+    return bytes(output)
+
+
 def get_int(stream_bytes, num):
     return int.from_bytes(stream_bytes.read(num), 'little')
 
@@ -391,7 +407,7 @@ while True:
             for b in buf:
                 decoded.append(b ^ KEY[SRV_IDX % len(KEY)] ^ init[SRV_IDX % len(init)])
                 SRV_IDX += 1
-            #print(hexdump.hexdump(bytes(decoded)))
+            print(hexdump.hexdump(bytes(decoded)))
             output.extend(decoded)
             if len(output) > 2:
                 parsed = parse(bytes(output))
