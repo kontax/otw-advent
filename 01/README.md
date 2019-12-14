@@ -99,4 +99,4 @@ I found that the time between keypresses worked best at 1000. The flag is:
 AOTW{l3ts_dr1nk_s0m3_eggn0g_y0u_cr4zy_d33r}
 ```
 
-The full script is located at [exp.py](exp.py).
+The full script is located at [solve.py](solve.py).
