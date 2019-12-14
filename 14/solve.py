@@ -48,10 +48,10 @@ def extract_letters(data):
 
 
 def solve():
-    (h1, p1, l1) = extract_data('lines1.bin')
-    (h2, p2, l2) = extract_data('lines2.bin')
-    (h3, p3, l3) = extract_data('lines3.bin')
-    (h4, p4, l4) = extract_data('lines4.bin')
+    (h1, p1, l1) = extract_data('files/lines1.bin')
+    (h2, p2, l2) = extract_data('files/lines2.bin')
+    (h3, p3, l3) = extract_data('files/lines3.bin')
+    (h4, p4, l4) = extract_data('files/lines4.bin')
 
     print(extract_letters(l1))
     print(extract_letters(l2))
