@@ -149,14 +149,16 @@ differs even though text is similar. This is probably the number of bytes until
 the next line, as the next few bytes match when the text is the same. 
 
 Bytes after this are all genearlly under 16 or so, and looking at the first 
-letter of `lines1.txt` (J), and comparing it to the PNG, we can see it's at
-location 5 across, 1 down. From now it's just a case of writing a script to
+letter of `lines1.txt` (J), and comparing it to the location of the letter in
+the PNG, we can see it's at location 5 across, 1 down. This matches the first
+two bytes after our length. From now it's just a case of writing a script to
 extract a byte at at time, using each pair of values as an index into a matrix
 of letters. There are some letters in the PNG that don't seem standard, however
 these can be ignored until there comes a time that the output doesn't make
 sense. Luckily everything worked first time, and the flag was output:
 
 > Jock: "Oh my God! JC! A flag!"
+
 > JC Denton: "A flag! AOTW{wh4t_4_r0tt3n_fi13_f0rm4t}"
 
 ```
