@@ -41,11 +41,14 @@ class VM:
         
         # Push inst on data
         if inst < 0x80:
+            print(f"{hex(inst)}: {hex(inst)} -> [data]")
             self.data.push(inst)
             return
         
         # XOR data with 0x80
         if inst == 0x80:
+            val = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(val)} ^ 0x80 ({hex(val^0x80)}) -> [data]")
             self.data.push(self.data.pop() ^ 0x80)
             return
         
@@ -53,8 +56,10 @@ class VM:
         if inst == 0x81:
             val = self.data.pop()
             if val == 0:
+                print(f"{hex(inst)}: val={hex(val)} | Push 0xff -> [data]")
                 self.data.push(0xff)
             else:
+                print(f"{hex(inst)}: val={hex(val)} | Push 0x0 -> [data]")
                 self.data.push(0)
             return
         
@@ -62,6 +67,7 @@ class VM:
         if inst == 0x82:
             a = self.data.pop()
             b = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(a)} & {hex(b)} = {hex(a&b)} -> [data]")
             self.data.push(a & b)
             return
         
@@ -69,6 +75,7 @@ class VM:
         if inst == 0x83:
             a = self.data.pop()
             b = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(a)} | {hex(b)} = {hex(a|b)} -> [data]")
             self.data.push(a | b)
             return
         
@@ -76,6 +83,7 @@ class VM:
         if inst == 0x84:
             a = self.data.pop()
             b = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(a)} ^ {hex(b)} = {hex(a^b)} -> [data]")
             self.data.push(a ^ b)
             return
         
@@ -83,6 +91,7 @@ class VM:
         if inst == 0x90:
             a = self.data.pop()
             b = self.data.pop()
+            print(f"{hex(inst)}: [data] ({hex(a)},{hex(b)}) >> ({hex(b)},{hex(a)} -> [data]")
             self.data.push(a)
             self.data.push(b)
             return
@@ -90,6 +99,7 @@ class VM:
         # Duplicate top of stack
         if inst == 0x91:
             val = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(val)} x2 -> [data]")
             self.data.push(val)
             self.data.push(val)
             return
@@ -103,13 +113,17 @@ class VM:
             self.functions[index].size = 0
             
             c = self.data.pop()
+            print(f"{hex(inst)}: From [data] -> [func[{index}]]...")
             while c != 0xa1:
+                print(f"    {hex(c)}")
                 self.functions[index].push(c)
                 c = self.data.pop()
             return
         
         # Move data into output
         if inst == 0xb0:
+            val = self.data.pop()
+            print(f"{hex(inst)}: [data] {hex(val)} -> [ouput]")
             self.output.push(self.data.pop())
             return
         
@@ -117,17 +131,25 @@ class VM:
         if inst >= 0xc0 and inst < 0xe0:
             index = inst - 0xc0
             func = self.functions[index]
+            print(f"{hex(inst)}: From [func[{index}] -> [code]...")
             for i in range(func.size, 0, -1):
-                self.code.push(func.data[i-1])
+                val = func.data[i-1]
+                print(f"    {hex(val)}")
+                self.code.push(val)
             return
         
         # Move func instructions to data if top of data stack > 0
         if inst >= 0xe0:
             index = inst - 0xe0
-            if self.data.pop() > 0:
+            chk = self.data.pop()
+            if chk > 0:
+                print(f"{hex(inst)}: From [func[{index}] -> [code]...")
+                print(f"{chk} > 0")
                 func = self.functions[index]
                 for i in range(func.size, 0, -1):
-                    self.code.push(func.data[i-1])
+                    val = func.data[i-1]
+                    print(f"    {hex(val)}")
+                    self.code.push(val)
             return
 
 if __name__ == '__main__':
@@ -148,7 +170,12 @@ if __name__ == '__main__':
     # Check results from execution
     if length != vm.output.size or vm.output.data != user_code:
         print("No")
-        [print(hex(x)) for x in vm.output.data]
+        print("\nOUTPUT")
+        print(' '.join(["{:02x}".format(i) for i in vm.output.data]))
+        print("\nCODE")
+        print(' '.join(["{:02x}".format(i) for i in user_code]))
+        print("\nDATA")
+        print(' '.join(["{:02x}".format(i) for i in vm.data.data]))
         exit(1)
     else:
         print("YES")

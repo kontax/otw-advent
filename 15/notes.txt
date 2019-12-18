@@ -1,0 +1,9 @@
+Output must be same as input
+0x80 ^ 0x04 = 0x84 etc
+
+Quines are programs that output their code - they're
+mostly done by creating a string containing the
+program.
+
+Need a printf:
+    
